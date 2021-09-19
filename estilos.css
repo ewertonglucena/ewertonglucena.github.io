@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400&display=swap');
 body{
-    background: lightcyan;
+    font-family: 'Mukta', sans-serif;
+    background: black;
+    color: whitesmoke;
 }
 h1{
-    background: darkred;
+    background: dimgray;
     color: whitesmoke;
 }
