@@ -4,7 +4,26 @@ body{
     background: black;
     color: whitesmoke;
 }
-h1{
-    background: dimgray;
+
+h1,h2,p,div{
+    text-align: center;
     color: whitesmoke;
+}
+
+.image-cropper {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    align-self: center;
 }
