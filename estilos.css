@@ -16,8 +16,8 @@ h1,h2,p,div{
     border-radius: 15px 50px;
     background: #0a045e9f;
     padding: 30px; 
-    width: 500px;
-    height: 50px; 
+    width: auto;
+    height: auto; 
   } 
 
 .image-cropper {
@@ -42,6 +42,7 @@ img {
   #videoBG{
     width: 100%;
     height: fit-content;
+    viewport-fit: scale-down;
     object-fit: fill;
     position: absolute;
     z-index: -1;
@@ -56,9 +57,10 @@ img {
     grid-template-rows: 1fr;
     align-items: center;
     justify-content: center;
+    padding: auto;
   }
 
-  .item {
+  .item{
     align-self: center;
     justify-self: center;
   }
