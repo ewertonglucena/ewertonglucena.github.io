@@ -11,157 +11,31 @@ h1,h2,p,div{
 }
 
 .image-cropper {
-    text-align: center;
     width: 300px;
     height: 300px;
     align-content: center;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    background-color: white;
 }
 
 img {
+    text-align: center;
     display: inline;
     margin: 0 auto;
-    height: 100%;
+    height: 115%;
     width: auto;
     align-self: center;
     text-align: center;
 }
 
-nav{
-    background:#000000;
-    position:absolute;
-    top:0;
-    bottom:0;
-    height:100%;
-    left:0;
-    width:70px;
-    overflow:hidden;
-    -webkit-transition:width .2s linear;
-    transition:width .2s linear;
-  }
-  a {
-    position:relative;
-    text-decoration:none;
-    color:white;
-    font-size: 13px;
-    display:table;
-    width:250px;
-    border-top:1px solid #00000000;  
-  }
-  .fa {
-    position: relative;
-    width: 70px;
-    height: 36px;
-    text-align: center;
-    top:12px; 
-    font-size:20px;
-  }
-  nav .nav-text  {
-    position:relative;
-    top:12px;
-  }
-  
-  a:hover{
-  color:#fff;
-  background-color:#000000; 
-  }
-  nav:hover{
-    width:250px;
-  }
-  .logo{
-    width:70px;
-    font-family: 'Mukta', sans-serif;
-    text-align:center;
-    transition:all 0.5s ease;
-  }
-  .label{
-    height:0px; 
-    float:left;
-    width:70px;
-    transition:all 0.5s ease;
-    font-family: 'Mukta', sans-serif;
-    opacity:0;
-  }
-  nav:hover> .logo{
-    width:250px;
-  }
-  nav:hover> .logo > h2{
-    text-indent: -999px
-  }
-  nav:hover> .logo > h2:before{
-    text-indent: 0px;
-    float:left;
-    position:relative;
-    left:60px;
-  }
-  nav:hover> .label{
-    height:50px;
-    width:250px;
-    opacity:1;
-    color:black;
-    text-align:center;
-  }
-  .mid-block
-  {
-  background-color:#000000;
-  text-transform:capitalize;
-  box-shadow:inset 0px 5px 5px -4px rgba(50, 50, 50, 0.55), inset 0px -4px 5px -4px rgba(50, 50, 50, 0.55);;
-  }
-  .scrollbar
-  {
-  height: 90%;
-  width: 100%;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  }
-  
-  #style-1::-webkit-scrollbar-track
-  {
-  border-radius: 2px;
-  }
-  
-  #style-1::-webkit-scrollbar
-  {
-  width: 5px;
-  background-color: #F7F7F7;
-  }
-  
-  #style-1::-webkit-scrollbar-thumb
-  {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #BFBFBF;
-  }
-  .scrollbar:hover{
-    height: 90%;
+  #videoBG{
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  #videoBG {
-    position:fixed;
+    height: fit-content;
+    object-fit: fill;
+    position: fixed;
     z-index: -1;
-}
-@media (min-aspect-ratio: 16/9) {
-    #videoBG {
-        width:100%;
-        height: auto;
-    }
-}
-@media (max-aspect-ratio: 16/9) {
-    #videoBG { 
-        width:auto;
-        height: 100%;
-    }
-}
-@media (max-width: 767px) {
-    #videoBG {
-        display: none;
-    }
-    body {
-        background: black;
-        background-size: cover;
-    }
-}
+    filter: blur(4px);
+    background-color: black;
+  }
