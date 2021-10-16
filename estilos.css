@@ -9,6 +9,7 @@ body{
 h1,h2,p,div{
     text-align: center;
     color: whitesmoke;
+    
 }
 
 #caixa_texto {
@@ -66,4 +67,19 @@ img {
     justify-self: center;
   }
   /*fim grade da centralizada*/
+
+  a:link, a:visited {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  }
+
+  a:hover, a:active {
+  background-color: transparent;
+  text-shadow: rgb(11, 11, 116);
+  text-emphasis-color: white;
+  }
+</style>
   
