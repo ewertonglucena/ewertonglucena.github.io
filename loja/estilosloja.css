@@ -65,7 +65,7 @@ img {
   .item{
     align-self: center;
     justify-self: center;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   /*fim grade da centralizada*/
 
@@ -81,6 +81,4 @@ img {
   background-color: transparent;
   text-emphasis-color: white;
   text-decoration: underline;
-  
   }
-</style>
