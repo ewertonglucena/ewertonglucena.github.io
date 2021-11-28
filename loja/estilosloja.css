@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400&display=swap');
+html, body{
+  overflow:initial !important;
+}
+
 body{
     font-family: 'Mukta', sans-serif;
     background: black;
     align-items: center;
     color: #2F01FD;
+    width: auto;
+    height: auto;
+    overflow: auto;
 }
 
 h1,h2,p,div{
     text-align: center;
     color: whitesmoke;
-    
 }
 
 #caixa_texto {
@@ -26,7 +32,6 @@ h1,h2,p,div{
     width: 200px;
     height: 200px;
     position: relative;
-    overflow: hidden;
     border-radius: 50%;
     background-color: white;
     object-position: center;
@@ -65,7 +70,6 @@ img {
   .item{
     align-self: center;
     justify-self: center;
-    overflow-y: hidden;
   }
   /*fim grade da centralizada*/
 
