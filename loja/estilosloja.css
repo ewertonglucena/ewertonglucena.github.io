@@ -65,3 +65,15 @@ img {
   text-emphasis-color: white;
   text-decoration: underline;
   }
+  table, th, td {
+    border: 1px solid whitesmoke;
+    align-content: center;
+  }
+  th, td {
+    background-color: darkblue;
+  }
+
+.vitrine{
+  width: auto;
+  height: 400px;
+}
