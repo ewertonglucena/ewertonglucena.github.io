@@ -3,12 +3,12 @@ body{
     font-family: 'Mukta', sans-serif;
     background: black;
     align-items: center;
-    color: whitesmoke;
+    color: #2F01FD;
 }
 
 h1,h2,p,div{
     text-align: center;
-    color: whitesmoke;
+    color: #2F01FD;
     
 }
 
@@ -70,7 +70,7 @@ img {
 
   a:link, a:visited {
   background-color: transparent;
-  color: white;
+  color: #2F01FD;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -78,7 +78,7 @@ img {
 
   a:hover, a:active {
   background-color: transparent;
-  text-shadow: rgb(11, 11, 116);
+  text-shadow: red;
   text-emphasis-color: white;
   }
 </style>
