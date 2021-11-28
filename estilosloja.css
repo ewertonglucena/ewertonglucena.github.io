@@ -68,7 +68,7 @@ img {
   }
   /*fim grade da centralizada*/
 
-  a:link, a:visited {
+  a:link, a:visited{
   background-color: transparent;
   color: #2F01FD;
   text-align: center;
@@ -80,5 +80,7 @@ img {
   background-color: transparent;
   text-shadow: red;
   text-emphasis-color: white;
+  text-decoration: underline;
+  
   }
 </style>
