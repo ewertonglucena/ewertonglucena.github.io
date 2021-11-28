@@ -13,7 +13,7 @@ body{
     overflow: auto;
 }
 
-h1,h2,p,div{
+h1,h2,h3,p,div{
     text-align: center;
     color: whitesmoke;
 }
