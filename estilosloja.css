@@ -78,7 +78,6 @@ img {
 
   a:hover, a:active {
   background-color: transparent;
-  text-shadow: red;
   text-emphasis-color: white;
   text-decoration: underline;
   
