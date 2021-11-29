@@ -41,7 +41,25 @@
       <h1>Entre em contato conosco!</h1>
       <p>Ligue para <br><b>Telefone:</b> (21) 2574-8888</p>
     </div><div class="item">
+
+      <div class="container">
+        <form action="mailto:contato@megacamisas.com" method="post" enctype="text/plain">
+          <label for="fname">Primeiro Nome</label>
+          <input type="text" id="fname" name="firstname" placeholder="Digite seu nome">
       
+          <label for="lname">Sobrenome</label>
+          <input type="text" id="lname" name="lastname" placeholder="Digite seu sobrenome">
+          <label for="country">País</label>
+          <select id="country" name="country">
+            <option value="australia">Brasil</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+      
+          <label for="subject">Assunto</label>
+          <textarea id="subject" name="subject" placeholder="Estamos ansiosos pela sua mensagem, digite algo =]" style="height:200px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
     </div>
     </div>
   </body>

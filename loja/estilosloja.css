@@ -180,3 +180,36 @@ img {
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  text-align: left;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #0704aa;
+  color: rgb(85, 85, 85);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text
+}
+
+input[type=submit]:hover {
+  background-color: #4645a0;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #535252;
+  padding: 20px;
+  text-align: left;
+}
