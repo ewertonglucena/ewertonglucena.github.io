@@ -1,0 +1,97 @@
+const fs=require('fs');
+const path=require('path');
+const {pathToFileURL}=require('url');
+const assert=require('assert/strict');
+const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+
+(async()=>{
+  const root=path.resolve(__dirname,'..');
+  const file=path.join(root,'CV - Ewerton Gomes de Lucena 2026 - PT-BR EN-US.html');
+  const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+  try{
+    const page=await browser.newPage({viewport:{width:1440,height:1050},reducedMotion:'reduce',locale:'pt-BR'});
+    const errors=[],requests=[];
+    page.on('pageerror',error=>errors.push(error.message));
+    page.on('request',request=>{if(/^https?:/.test(request.url()))requests.push(request.url());});
+    await page.goto(pathToFileURL(file).href);
+    assert.equal(await page.locator('html').getAttribute('lang'),'pt-BR');
+    assert.equal(await page.locator('#objective-heading').textContent(),'Objetivo Profissional');
+    assert.equal(await page.locator('.headline').textContent(),'Consultor de Cibersegurança / Microsoft Security');
+    assert.equal(await page.locator('[data-lang="pt-BR"]').getAttribute('aria-pressed'),'true');
+    assert.equal(await page.locator('.flag').count(),2);
+    assert.equal(await page.locator('.portrait-frame .initials').count(),0);
+    const image=await page.locator('.portrait-frame img').evaluate(element=>({loaded:element.complete&&element.naturalWidth>0,src:element.src}));
+    assert(image.loaded);
+    assert.equal(image.src,'data:image/png;base64,'+fs.readFileSync('C:/Users/ewert/OneDrive/backup/Ewerton Lucena-Foto profissional avatar.png').toString('base64'));
+    assert(await page.locator('.portrait-frame img').isVisible());
+    assert.equal(await page.locator('.job').count(),8);
+    assert.equal(await page.locator('.certificate').count(),22);
+    assert.equal(await page.locator('.education-item').count(),5);
+    await page.screenshot({path:path.join(__dirname,'preview-bilingual-pt.png')});
+    await page.locator('#credential-search').fill('forense');
+    assert.equal(await page.locator('.certificate:visible').count(),1);
+    assert((await page.locator('.certificate:visible').textContent()).includes('Forense de Redes'));
+    await page.locator('#credential-search').fill('seguranca');
+    assert((await page.locator('.certificate:visible').count())>1,'Search should ignore Portuguese accents');
+    await page.locator('#credential-search').fill('');
+    await page.locator('[data-filter="microsoft"]').click();
+    assert.equal(await page.locator('.certificate:visible').count(),7);
+    await page.locator('#toggle-details').click();
+    assert.equal(await page.locator('.responsibilities[open]').count(),0);
+    await page.locator('[data-lang="en-US"]').click();
+    assert.equal(await page.locator('html').getAttribute('lang'),'en-US');
+    assert.equal(await page.locator('#objective-heading').textContent(),'Career Objective');
+    assert.equal(await page.locator('.job h3').first().textContent(),'Senior Security Consultant');
+    assert.equal(await page.locator('#toggle-details').textContent(),'Expand responsibilities');
+    assert.equal(await page.locator('.responsibilities[open]').count(),0,'Switching language must preserve disclosures');
+    assert.equal(await page.locator('.certificate:visible').count(),7,'Switching language must preserve provider filter');
+    assert((await page.locator('#search-status').textContent()).startsWith('7 of 22'));
+    assert.equal(await page.locator('#credential-search').getAttribute('placeholder'),'Search title, provider, or date…');
+    assert.equal(await page.locator('#theme-toggle').getAttribute('aria-label'),'Switch to light theme');
+    await page.locator('[data-filter="all"]').click();
+    await page.locator('#toggle-details').click();
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:path.join(__dirname,'preview-bilingual-en.png')});
+    await page.reload();
+    assert.equal(await page.locator('html').getAttribute('lang'),'en-US','Remember the chosen language');
+    await page.locator('#theme-toggle').click();
+    await page.locator('[data-lang="pt-BR"]').click();
+    assert.equal(await page.locator('html').getAttribute('data-theme'),'light','Language must not reset theme');
+    assert.equal(await page.locator('#theme-toggle').getAttribute('aria-label'),'Ativar tema escuro');
+    assert((await page.title()).includes('Cibersegurança'));
+    await page.locator('#theme-toggle').click();
+    for(const locale of ['pt-BR','en-US']){
+      await page.locator(`[data-lang="${locale}"]`).click();
+      for(const width of [1440,1024,768,390,320]){
+        await page.setViewportSize({width,height:900});
+        const dimensions=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+        assert(dimensions.scroll<=dimensions.width+1,`${locale}: ${JSON.stringify(dimensions)}`);
+        assert(await page.locator('.portrait-frame img').isVisible());
+        assert(await page.locator(`[data-lang="${locale}"]`).isVisible());
+      }
+      await page.locator('#credential-search').fill('SC-401');
+      await page.locator('#toggle-details').click();
+      await page.pdf({path:path.join(__dirname,`print-bilingual-${locale}.pdf`),format:'A4',preferCSSPageSize:true,printBackground:true});
+      assert.equal(await page.locator('.responsibilities[open]').count(),0);
+      await page.locator('#credential-search').fill('');
+      await page.locator('#toggle-details').click();
+    }
+    await page.locator('[data-lang="pt-BR"]').click();
+    await page.setViewportSize({width:390,height:844});
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:path.join(__dirname,'preview-bilingual-mobile.png')});
+    await page.setViewportSize({width:1440,height:1050});
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:path.join(__dirname,'preview-bilingual-pt.png')});
+    const staticPage=await browser.newPage({javaScriptEnabled:false});
+    await staticPage.goto(pathToFileURL(file).href);
+    assert.equal(await staticPage.locator('#objective-heading').textContent(),'Objetivo Profissional');
+    assert.equal(await staticPage.locator('.certificate:visible').count(),22);
+    await staticPage.close();
+    assert.deepEqual(errors,[]);
+    assert.deepEqual(requests,[]);
+    const report={checks:'passed',photo:'Exact attached PNG embedded in HTML',languages:['pt-BR','en-US'],localized:'Headings, roles, duties, education, skills, credentials, dates, hobbies, controls, labels and metadata',flags:'Inline Brazil and United States SVG',widths:[1440,1024,768,390,320],print:'Both languages, all content despite active filter and collapsed disclosures',externalRequests:0,consoleErrors:0};
+    fs.writeFileSync(path.join(__dirname,'verification-bilingual.json'),JSON.stringify(report,null,2));
+    console.log(JSON.stringify(report));
+  }finally{await browser.close();}
+})().catch(error=>{console.error(error);process.exit(1);});

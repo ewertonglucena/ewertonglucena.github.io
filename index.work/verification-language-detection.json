@@ -1,0 +1,37 @@
+{
+  "checks": "passed",
+  "cases": [
+    {
+      "browserLocale": "pt-BR",
+      "detected": "pt-BR"
+    },
+    {
+      "browserLocale": "pt-PT",
+      "detected": "pt-BR"
+    },
+    {
+      "browserLocale": "en-US",
+      "detected": "en-US"
+    },
+    {
+      "browserLocale": "en-GB",
+      "detected": "en-US"
+    },
+    {
+      "browserLocale": "es-ES",
+      "detected": "en-US"
+    },
+    {
+      "browserLocale": "de-DE",
+      "detected": "en-US"
+    }
+  ],
+  "preferenceList": "First supported browser language",
+  "manualChoice": "Saved and respected",
+  "explicitLink": "Respected; updated by manual switch without losing anchor",
+  "legacyCache": "Ignored",
+  "blockedStorage": "Supported",
+  "browserLanguageChange": "Supported when no override",
+  "canvaLink": "Removed",
+  "consoleErrors": 0
+}

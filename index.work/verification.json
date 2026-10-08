@@ -1,0 +1,23 @@
+{
+  "checks": "passed",
+  "roles": 8,
+  "education": 5,
+  "skills": 12,
+  "credentials": 22,
+  "widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "externalRequests": 0,
+  "consoleErrors": 0,
+  "contrast": {
+    "body": 16.705192757005253,
+    "muted": 10.057866834310314,
+    "accent": 11.720300880955193
+  },
+  "contentWithoutJavaScript": "complete",
+  "print": "A4, all content despite collapsed roles and credential filter"
+}

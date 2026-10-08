@@ -1,0 +1,151 @@
+01 CAREER OBJECTIVE
+Cybersecurity consultant focused on cloud security, identity, and data protection in the Microsoft
+ecosystem. My objective is to help organizations translate business and regulatory requirements into
+scalable security architectures, strengthen Zero Trust adoption, and protect sensitive data and AI workloads.
+02 WORK EXPERIENCE 2014 — PRESENT
+CLOUD. IDENTITY. DATA.
+EwertonGomes de Lucena
+Cybersecurity Consultant / Microsoft Security
+MICROSOFT SECURITY ZERO TRUST DATA & AI PROTECTION
+ewerton.lucena@hotmail.com +55 21 99754-1185 LinkedIn ↗
+Avanade Current role
+Senior Security Consultant
+Microsoft · Cloud Security Architect (Contractor)
+March 2026 — Present
+Architect and implement cloud security, identity, data protection, and compliance solutions within the Microsoft
+ecosystem.
+Work with Microsoft Entra on Identity and Access Management (IAM), Conditional Access, multifactor authentication
+(MFA), Identity Governance, and identity protection, aligned with Zero Trust principles.
+Implement and enhance Microsoft Purview solutions, including Data Security Posture Management (DSPM), DSPM for AI,
+Information Protection, and Data Loss Prevention (DLP).
+Define strategies for classifying, labeling, protecting, and governing sensitive data in Microsoft 365, cloud applications,
+and AI workloads.
+Support enterprise clients in identifying and reducing risks related to data, identities, access, and AI use.
+Translate technical, regulatory, and business requirements into scalable security architectures aligned with Microsoft
+best practices.
+Advise clients on adopting security controls, compliance measures, and secure digital transformation.
+ZAMP
+Information Security Analyst II
+September 2024 — March 2026
+Defined, implemented, and enhanced security controls to protect sensitive data, enterprise environments, and AI
+solutions.
+Worked on risk management, regulatory compliance, Brazil’s General Data Protection Law (LGPD), and security
+throughout the Artificial Intelligence lifecycle.
+Applied Security by Design principles, including threat modeling, risk assessments, and security requirements definition.
+Implemented and administered DSPM, Cloud Access Security Broker (CASB), and Data Loss Prevention solutions.
+Managed information classification and protection, tokenization, and data masking.
+Continuously monitored security posture across Microsoft 365, Azure, and SaaS applications.
+Used Microsoft Purview and Netskope to strengthen governance, compliance, and data protection.
+Collaborated with engineering, data science, and architecture teams on strategic initiatives and audits.
+03 EDUCATION
+Postgraduate Program in Cybersecurity for Business in the Digital Era
+FIA Business School
+2027
+Extension Course: AI LAB I
+PUC-RIO
+2025
+Bachelor’s Degree in Computer Science
+Universidade Cruzeiro do Sul
+2023
+Cloud Computing Architect Bootcamp
+IGTI (XP Educação)
+2021
+Clavis Segurança da Informação
+Security Operations Analyst L2
+November 2023 — September 2024
+Clavis Segurança da Informação
+Information Security Operations Analyst L1
+June 2022 — November 2023
+Provided cybersecurity consulting and developed security plans.
+Monitored security events and responded to incidents.
+Developed security reports and action plans aligned with CIS, NIST, CISA, and ISO 27k.
+Managed vulnerabilities and applied security best practices in Microsoft Azure.
+Managed assets and secured on-premises devices, including firewalls, Active Directory, AD FS, and WAF.
+Worked with Microsoft Azure technologies, including Sentinel, Entra ID, and Azure WAF.
+Used Infrastructure as Code tools, including Ansible and Terraform, for infrastructure and cloud security.
+Universidade Veiga de Almeida
+Infrastructure Analyst — Supervisor I
+April 2021 — June 2022
+Supervised the helpdesk team.
+Administered cloud and on-premises servers with Windows Server 2008, 2012, and 2016 across Azure and AWS.
+Administered Kaspersky Endpoint Detection and Response (EDR), including reports, tasks, and incident response.
+Used shell scripting with PowerShell, Cisco CLI, and Unix.
+Ilumno
+IT Technician
+September 2015 — April 2021
+Supported IT infrastructure and provided management and technical support for the call centers of UVA and Unijorge
+universities.
+Worked with Azure Cloud and administered Active Directory and Windows Server 2008, 2012, and 2016.
+Supported Cisco local area networks (LAN) and Fortinet solutions: FortiGate, FortiAP, and FortiAnalyzer.
+Universidade Veiga de Almeida
+Computer Lab Technician
+August 2015 — September 2015
+Supported and advised the academic community on information technology matters.
+Performed scheduled maintenance and occasional computer repairs.
+Universidade Veiga de Almeida
+IT Infrastructure Intern
+August 2014 — August 2015
+Provided helpdesk services and Level 1 support.
+Technical Diploma in Computer Networking
+Senai, Firjan RJ
+2016
+04 SKILLS & EXPERTISE
+Security architecture, technical delivery, and advisory across cloud, identity, and data.
+Cloud Security Architecture & Strategy Benchmarks & NIST Cybersecurity Framework Identity & Access Security (IAM)
+Data Security & Microsoft Purview Data Security Posture Management (DSPM) Cloud Security Posture & Vulnerability Management
+Security Governance, Risk & Compliance Network & Cloud Infrastructure Security Security Monitoring & Incident Response
+AI & Data Protection Security Advisory & Stakeholder Management Continuous Learning & Technical Leadership
+TECHNOLOGY FOCUS Microsoft Entra · Microsoft Purview · Azure · Microsoft 365 · Sentinel · Netskope · AWS · Ansible · Terraform
+05 CERTIFICATES & TRAINING 2021 — 2026
+◇ Microsoft Azure Security Technologies: Microsoft Entra
+Skillsoft /  August 2026
+◇ Sell with confidence: Position Microsoft Purview to Secure customer data in the age of AI — Proficient
+Microsoft /  August 2026
+◇ Microsoft Certified: Information Security Administrator Associate (SC-401)
+Microsoft /  March 2026
+◇ Implement, Govern and Scale Data Security with Microsoft Purview in the era of AI — Skilled
+Microsoft /  March 2026
+◇ NCCSA — Netskope One Administrator
+Netskope /  October 2025
+◇ Microsoft Security Immersion Workshop: On The Brink
+Microsoft /  September 2024
+◇ Navigating Threats: Advanced Strategies in Threat Modeling
+Udemy /  June 2024
+◇ Microsoft Certified: Azure AI Fundamentals (AI-900)
+Microsoft /  June 2024
+◇ SoD — Segregation of Duties
+IAM Tech Day /  January 2024
+◇ [C] CompTIA Security+ 601
+Clavis Academy /  January 2024
+◇ Cloud Security Course
+SegInfoBrasil /  September 2023
+◇ Identity and Access Governance
+IAM Tech Day /  September 2023
+◇ Microsoft Certified: Security Operations Analyst Associate (SC-200)
+Microsoft /  February 2023
+◇ Cybersecurity
+FIAP /  January 2023
+◇ Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900)
+Microsoft /  November 2022
+◇ Network Forensics
+Clavis Academy /  September 2022
+◇ Foundations of Operationalizing MITRE ATT&CK
+AttackIQ /  September 2022
+◇ Kibana Fundamentals
+Elastic /  June 2022
+◇ Understanding Zero Trust
+LinkedIn /  June 2022
+◇ NSE 3 Network Security Associate
+Fortinet /  January 2022
+◇ Cybersecurity Essentials
+Cisco /  December 2021
+◇ Introduction to LGPD
+Protegon /  July 2021
+06 LANGUAGES
+English Advanced
+Spanish Intermediate
+Portuguese (Brazil) Native
+07 BEYOND WORK
+Ewerton Gomes de Lucena / English CV · 2026
+Gym & weight training Forró dancing Science fiction books TV series
+Video games & online cooperative games Cult, horror, crime & sci-fi films Crime, horror & science fiction books

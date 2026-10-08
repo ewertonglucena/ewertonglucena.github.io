@@ -1,0 +1,46 @@
+Personal PROFILE
+Specialist in cyber defense technologies and passionate about technological innovations.
+FIA Business SchoolPostgraduate Program in Cybersecurity for Business in the Digital Era, 2027PUC-RIOExtension Course: AI LAB I, 2025Universidade Cruzeiro do SulBachelor's Degree in Computer Science, 2023IGTI (XP Educação)Bootcamp Cloud Computing Architect, 2021Senai, Firjan RJTechnical Diploma in Computer Networking, 2016
+academic history
+Cloud Security Architecture & StrategyBenchmarks and NIST Cybersecurity Framework.Identity & Access Security (IAM)Data Security & Microsoft PurviewData Security Posture Management (DSPM)Cloud Security Posture & Vulnerability ManagementSecurity Governance, Risk & Compliance Network & Cloud Infrastructure SecuritySecurity Monitoring & Incident Response AI & Data ProtectionSecurity Advisory & Stakeholder ManagementContinuous Learning & Technical Leadership
+SKILLS
+work experience
+English - AdvancedSpanish - IntermediatePortuguese (Brazil) - Native
+Languages
++55[21997541185](tel:+5521997541185)
+[/ewertonlucena](https://www.linkedin.com/in/ewertonlucena/)
+Contact Info
+[ewerton.lucena@hotmail.com](mailto:ewerton.lucena@hotmail.com)
+Ewerton Lucena
+Cybersecurity ConsultantMicrosoft Security
+Avanade - Senior Security ConsultantMicrosoft - Cloud Security Architect [Contractor]
+Architecture and implementation of cloud security, identity, data protection, and compliance solutions within the Microsoft ecosystem.Work with Microsoft Entra on Identity and Access Management (IAM), Conditional Access, MFA, Identity Governance, and identity protection, aligned with Zero Trust principles.Implementation and enhancement of Microsoft Purview solutions, including Data Security Posture Management (DSPM), DSPM for AI, Information Protection, and Data Loss Prevention (DLP).Definition of strategies for classifying, labeling, protecting, and governing sensitive data in Microsoft 365, cloud applications, and AI workloads.Support for enterprise clients in identifying and reducing risks related to data, identities, access, and AI use.
+March 2026 - present Employer
+Microsoft Azure Security Technologies: Microsoft EntraSkillsoft - August 2026Sell with confidence: Position Microsoft Purview to Secure customer data in the age of AI - ProficientMicrosoft - August 2026Microsoft Certified: Information Security Administrator Associate (SC-401)Microsoft - March 2026Implement, Govern and Scale Data Security with Microsoft Purview in the era of AI -​ SkilledMicrosoft - March 2026NCCSA - Netskope One Administrator,Netskope - October 2025Microsoft Microsoft Security Immersion Workshop: On The Brink,Microsoft - September 2024Navigating Threats: Advanced Strategies in Threat Modeling,Udemy - June 2024Microsoft Certified: Azure AI Fundamentals (AI-900),Microsoft - June 2024SoD - Segregation of Duties,IAM Tech Day - January 2024[C] CompTIA Security+ 601,Clavis Academy - January 2024Cloud Security Course,SegInfoBrasil - September 2023Identity and Access Governance,IAM Tech Day - September 2023Microsoft Certified: Security Operations Analyst Associate (SC-200),Microsoft - February 2023Cybersecurity,FIAP - January 2023
+Certificates
+Clavis Segurança da Informação,Security Operations Analyst L2
+November 2023 - September 2024
+Cybersecurity ConsultingSecurity Plan DevelopmentMonitoring and Incident ResponseDevelopment of security reports and action plans (CIS, NIST, CISA, ISO 27k)Vulnerability managementSecurity best practices in Microsoft AzureAsset ManagementSecurity Management of On-Premises devices (Firewall, Active Directory, AD FS, WAF)Microsoft Azure (Sentinel, Entra ID, Azure WAF)Infrastructure as Code (Ansible, Terraform)Infrastructure SecurityCloud Security
+Clavis Segurança da Informação,Information Security Operations Analyst L1
+June 2022 - November 2023
+...
+ZAMP - Information Security Analyst II
+Definition, implementation, and enhancement of security controls to protect sensitive data, enterprise environments, and AI solutions.Work on risk management, regulatory compliance, LGPD, and security throughout the Artificial Intelligence lifecycle.Application of Security by Design principles, including threat modeling, risk assessments, and security requirements definition.Implementation and administration of DSPM, CASB, and Data Loss Prevention (DLP) solutions.Management of information classification and protection, tokenization, and data masking.Continuous monitoring of security posture across Microsoft 365, Azure, and SaaS applications.Use of Microsoft Purview and Netskope to strengthen governance, compliance, and data protection.Collaboration with engineering, data science, and architecture teams on strategic initiatives and audits.
+September 2024 - March 2026
+Translation of technical, regulatory, and business requirements into scalable security architectures aligned with Microsoft best practices.Advisory support for clients adopting security controls, compliance measures, and secure digital transformation.
+Certificates
+Gym / Weight TrainingDancing: ForróScience Fiction BooksTV SeriesVideo Games and Online Cooperative GamesCult, Horror, Crime, and Sci-Fi FilmsCrime, Horror, and Science Fiction Books
+Hobbies
+Microsoft Certified: Security, Compliance, and Identity Fundamentals (SC-900), Microsoft - November 2022Network Forensics,Clavis Academy - September 2022Foundations of Operationalizing MITRE ATT&CK, AttackIQ - September 2022Kibana Fundamentals, Elastic - June 2022Understanding Zero Trust,Linkedin - June 2022NSE 3 Network Security Associate,Fortinet - January 2022Cybersecurity Essentials,Cisco - December 2021Introduction to LGPD,Protegon - July 2021
+Universidade Veiga de Almeida, IT Infrastructure Intern
+August 2014 - August 2015
+Helpdesk ServiceLevel 1 Support
+Universidade Veiga de Almeida, Computer Lab Technician
+Support and guidance for the academic community on information technology matters.Scheduled maintenance and occasional computer repairs.
+August 2015 - September 2015
+Ilumno, IT Technician
+Infrastructure SupportManagement and technical support for the call centers of UVA and Unijorge universitiesAzure CloudActive Directory Administration, Servers 2008, 2012 and 2016LAN (Cisco), Fortinet Solutions (FortiGate, FortiAP, FortiAnalyzer)
+September 2015 - April 2021
+Universidade Veiga de Almeida, Infrastructure Analyst - Supervisor I
+Helpdesk Team SupervisionAdministration of Cloud and On-Premises Servers (Windows Server 2008, 2012, 2016) (Azure, AWS)EDR administration (Kaspersky): reports, tasks and incident response Shell script (Powershell, Cisco CLI, Unix)
+April 2021 - June 2022

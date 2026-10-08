@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Ewerton Gomes de Lucena — Cybersecurity Consultant, Microsoft Security. Cloud security architecture, identity, data protection, and AI security.">
+  <title>Ewerton Gomes de Lucena | Cybersecurity & Microsoft Security</title>
+  <style>
+    :root { --bg:#001923; --surface:#042b38; --surface-soft:#073646; --ink:#edf8fc; --muted:#afc5ce; --accent:#43e5ea; --accent-ink:#001f28; --line:#24505e; --header:#001923ee; --shadow:0 18px 60px #0003; --display:'Bahnschrift','Trebuchet MS',sans-serif; --body:'Trebuchet MS','Segoe UI',sans-serif; --mono:'Consolas','Courier New',monospace; color-scheme:dark; }
+    html[data-theme="light"] { --bg:#f0f7f9; --surface:#fff; --surface-soft:#e1f1f4; --ink:#092b38; --muted:#45616b; --accent:#007982; --accent-ink:#fff; --line:#b7d1d9; --header:#f0f7f9ee; --shadow:0 18px 60px #052c3710; color-scheme:light; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:115px; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:15px; line-height:1.65; transition:background .25s,color .25s; }
+    button,input { font:inherit; }
+    button,a,input,summary { -webkit-tap-highlight-color:transparent; }
+    button,a { touch-action:manipulation; }
+    a { color:inherit; text-underline-offset:4px; }
+    button { cursor:pointer; }
+    button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+    ::selection { background:var(--accent); color:var(--accent-ink); }
+    [hidden] { display:none!important; }
+    .wrap { width:min(1100px,calc(100% - 80px)); margin:auto; }
+    .skip-link { position:fixed; left:12px; top:-80px; z-index:20; padding:12px 20px; background:var(--accent); color:var(--accent-ink); }
+    .skip-link:focus { top:12px; }
+    .topbar { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:var(--header); backdrop-filter:blur(16px); }
+    .topbar-inner { display:flex; align-items:center; gap:28px; min-height:80px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+    .monogram { display:grid; place-items:center; width:36px; height:40px; clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background:var(--accent); color:var(--accent-ink); font-family:var(--display); font-weight:700; font-size:16px; }
+    .brand-text { font-family:var(--display); font-size:14px; letter-spacing:.01em; }
+    .brand-text small { display:block; color:var(--muted); font-family:var(--mono); font-size:10px; letter-spacing:.1em; }
+    .nav { display:flex; align-items:center; gap:22px; margin-left:auto; }
+    .nav a { color:var(--muted); font-size:12px; text-decoration:none; padding:7px 0; border-bottom:2px solid transparent; white-space:nowrap; }
+    .nav a:hover,.nav a[aria-current="location"] { color:var(--accent); border-color:var(--accent); }
+    .actions { display:flex; gap:8px; align-items:center; flex-shrink:0; }
+    .language-switch { display:flex; gap:3px; border:1px solid var(--line); padding:3px; border-radius:7px; }
+    .language-button { display:flex; align-items:center; gap:6px; border:0; background:transparent; color:var(--muted); padding:6px 8px; min-height:32px; border-radius:4px; font-family:var(--mono); font-size:10px; white-space:nowrap; }
+    .language-button[aria-pressed="true"] { background:var(--surface-soft); color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+    .language-button:hover { color:var(--accent); }
+    .flag { display:block; width:20px; height:14px; border-radius:2px; flex-shrink:0; }
+    .icon-button { width:38px; height:38px; border:1px solid var(--line); background:transparent; border-radius:7px; color:var(--ink); display:grid; place-items:center; transition:background .2s,border-color .2s; }
+    .icon-button:hover { background:var(--surface-soft); border-color:var(--accent); }
+    svg.icon { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .print-button { display:flex; align-items:center; gap:8px; color:var(--ink); background:transparent; border:1px solid var(--line); border-radius:7px; padding:8px 12px; font-size:12px; min-height:38px; }
+    .print-button:hover { border-color:var(--accent); }
+    .reading-progress { height:2px; background:var(--accent); width:0; position:absolute; bottom:-1px; left:0; }
+    .hero { position:relative; padding:72px 0 56px; overflow:hidden; }
+    .hero::before { content:''; position:absolute; right:-80px; top:-200px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle,#15cbd415,transparent 66%); pointer-events:none; }
+    .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:44px; align-items:center; }
+    .eyebrow { font-family:var(--mono); font-size:11px; font-weight:400; color:var(--accent); text-transform:uppercase; letter-spacing:.17em; margin:0 0 28px; display:flex; align-items:center; gap:10px; }
+    .eyebrow::before { content:''; width:24px; height:1px; background:var(--accent); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { margin:0 0 24px; font-family:var(--display); font-size:clamp(43px,5.6vw,72px); line-height:1.03; letter-spacing:-.045em; font-weight:700; }
+    h1 span { display:block; }
+    h1 .surname { color:var(--accent); }
+    .headline { font-family:var(--display); font-size:23px; line-height:1.3; margin:0 0 15px; font-weight:400; }
+    .hero-caption { color:var(--muted); font-size:15px; max-width:540px; margin-bottom:25px; }
+    .focus-tags { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 32px; list-style:none; padding:0; }
+    .focus-tags li { border:1px solid var(--line); font-family:var(--mono); font-size:10px; color:var(--muted); padding:5px 10px; border-radius:4px; }
+    .contact { display:flex; flex-wrap:wrap; gap:13px 24px; font-size:12px; }
+    .contact a { display:inline-flex; gap:8px; align-items:center; text-decoration:none; border-bottom:1px solid transparent; overflow-wrap:anywhere; }
+    .contact a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+    .contact .icon { flex-shrink:0; color:var(--accent); width:15px; height:15px; }
+    .hero-visual { height:326px; position:relative; display:grid; place-items:center; }
+    .network { position:absolute; inset:0; width:100%; height:100%; color:var(--accent); overflow:visible; }
+    .network path,.network polygon { stroke:currentColor; stroke-width:1; fill:none; opacity:.25; }
+    .network .node { fill:currentColor; opacity:.8; }
+    .network .hex-bright { opacity:.6; }
+    .portrait-frame { width:156px; height:156px; border-radius:50%; padding:6px; border:1px solid var(--accent); background:var(--bg); position:relative; z-index:1; box-shadow:0 0 45px #1dd8e620; display:grid; place-items:center; }
+    .portrait-frame img { width:100%; height:100%; object-fit:cover; object-position:50% 42%; border-radius:50%; display:block; }
+    .orbit { position:absolute; width:210px; height:210px; border:1px dashed var(--line); border-radius:50%; animation:orbit 90s linear infinite; }
+    .diagram-label { position:absolute; font-family:var(--mono); font-size:9px; letter-spacing:.15em; color:var(--accent); background:var(--bg); padding:3px 7px; z-index:2; }
+    .diagram-label.identity { top:22px; left:112px; }
+    .diagram-label.cloud { left:-10px; bottom:65px; }
+    .diagram-label.data { right:-7px; bottom:65px; }
+    .diagram-caption { position:absolute; bottom:0; color:var(--muted); font-family:var(--mono); font-size:9px; letter-spacing:.13em; }
+    @keyframes orbit { to { transform:rotate(360deg); } }
+    .hero-divider { display:flex; align-items:center; gap:12px; margin-top:50px; color:var(--line); }
+    .hero-divider::before,.hero-divider::after { content:''; height:1px; flex:1; background:var(--line); }
+    .hero-divider span { color:var(--accent); font-size:17px; line-height:1; }
+    main { padding-bottom:30px; }
+    .section { padding:40px 0 48px; border-bottom:1px solid var(--line); scroll-margin-top:90px; }
+    .section-header { display:flex; align-items:center; gap:16px; margin-bottom:30px; }
+    .section-number { font-family:var(--mono); font-size:11px; color:var(--accent); border:1px solid var(--line); width:32px; height:32px; display:grid; place-items:center; border-radius:4px; flex-shrink:0; }
+    h2 { font-family:var(--display); font-size:12px; font-weight:500; text-transform:uppercase; letter-spacing:.22em; margin:0; }
+    .section-header::after { content:''; height:1px; width:60px; margin-left:3px; background:var(--line); }
+    .section-note { margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--muted); }
+    .objective { padding:32px 36px; border-left:3px solid var(--accent); background:var(--surface); border-radius:0 10px 10px 0; box-shadow:var(--shadow); }
+    .objective p { font-family:var(--display); font-size:21px; font-weight:400; line-height:1.6; margin:0; max-width:940px; }
+    .objective strong { color:var(--accent); font-weight:500; }
+    .experience-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:-10px 0 28px 48px; }
+    .small-note { color:var(--muted); font-size:12px; margin:0; }
+    .text-button { border:0; color:var(--accent); background:none; padding:5px 0; font-size:12px; text-decoration:underline; text-underline-offset:4px; white-space:nowrap; }
+    .timeline { padding-left:29px; margin-left:15px; border-left:1px solid var(--line); }
+    .job { position:relative; margin:0 0 24px; padding:22px 26px; border:1px solid transparent; border-radius:8px; transition:background .2s,border-color .2s; }
+    .job:hover { background:var(--surface); border-color:var(--line); }
+    .job::before { content:''; position:absolute; top:30px; left:-36px; width:11px; height:11px; background:var(--bg); border:2px solid var(--accent); border-radius:50%; }
+    .job-current { background:var(--surface); border-color:var(--line); box-shadow:var(--shadow); }
+    .job-current::before { background:var(--accent); box-shadow:0 0 0 5px #43e5ea15; }
+    .job:last-child { margin-bottom:0; }
+    .job-header { display:flex; align-items:flex-start; justify-content:space-between; gap:22px; margin-bottom:6px; }
+    .company { margin:0 0 5px; font-family:var(--display); font-size:14px; font-weight:500; color:var(--accent); }
+    .current-label { margin-left:10px; font-family:var(--mono); font-size:9px; font-weight:400; letter-spacing:.02em; color:var(--muted); border:1px solid var(--line); border-radius:3px; padding:2px 6px; white-space:nowrap; }
+    h3 { font-family:var(--display); font-size:21px; font-weight:500; letter-spacing:-.01em; line-height:1.3; margin:0 0 5px; }
+    .assignment { font-size:12px; color:var(--muted); margin:6px 0 0; }
+    .dates { font-family:var(--mono); font-size:10px; color:var(--muted); line-height:1.6; margin:3px 0 0; white-space:nowrap; }
+    .responsibilities { margin-top:14px; }
+    summary { list-style:none; cursor:pointer; color:var(--muted); display:inline-flex; gap:10px; align-items:center; font-size:11px; padding:4px 0; user-select:none; white-space:nowrap; writing-mode:horizontal-tb; }
+    summary::-webkit-details-marker { display:none; }
+    summary .disclosure-icon { font-size:16px; color:var(--accent); }
+    summary [data-i18n] { transform:none; writing-mode:horizontal-tb; white-space:nowrap; }
+    ul { padding-left:20px; }
+    .responsibilities ul { margin:11px 0 0; font-size:14px; line-height:1.75; }
+    .responsibilities li { padding-left:4px; margin:7px 0; max-width:870px; }
+    .responsibilities li::marker { color:var(--accent); font-size:10px; }
+    .education-list { margin-left:48px; }
+    .education-item { display:flex; justify-content:space-between; gap:24px; padding:23px 0; border-bottom:1px solid var(--line); }
+    .education-item:first-child { padding-top:0; }
+    .education-item:last-child { border-bottom:0; padding-bottom:0; }
+    .education-item h3 { font-size:18px; max-width:710px; }
+    .education-item p { font-size:13px; color:var(--muted); margin:5px 0 0; }
+    .year { color:var(--accent); font-family:var(--mono); font-size:12px; flex-shrink:0; padding-top:3px; }
+    .skills-intro { color:var(--muted); font-size:14px; margin:0 0 22px 48px; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:12px; list-style:none; padding:0; margin:0 0 26px 48px; }
+    .skill-tags li { padding:10px 16px; border:1px solid var(--line); border-radius:6px; background:var(--surface); font-size:13px; transition:border-color .2s,transform .2s; }
+    .skill-tags li:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .technology-line { margin:0 0 0 48px; border-top:1px solid var(--line); padding-top:20px; font-size:12px; color:var(--muted); }
+    .technology-line strong { color:var(--accent); font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-right:10px; font-weight:400; }
+    .credential-controls { display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin:0 0 24px 48px; }
+    .search-wrap { flex:1; min-width:210px; position:relative; }
+    .search-wrap .icon { position:absolute; left:14px; top:15px; color:var(--muted); pointer-events:none; }
+    #credential-search { width:100%; padding:12px 16px 12px 42px; border:1px solid var(--line); border-radius:6px; background:var(--surface); color:var(--ink); font-size:13px; min-height:44px; }
+    #credential-search::placeholder { color:var(--muted); opacity:1; }
+    .filter-group { display:flex; flex-wrap:wrap; gap:6px; }
+    .filter { padding:10px 12px; font-size:12px; border:1px solid var(--line); background:transparent; color:var(--muted); border-radius:5px; min-height:44px; }
+    .filter[aria-pressed="true"] { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+    .filter:hover { border-color:var(--accent); }
+    .search-status { color:var(--muted); font-family:var(--mono); font-size:10px; margin:0 0 6px 48px; }
+    .certificate-list { list-style:none; padding:0; margin:0 0 0 48px; }
+    .certificate { display:flex; gap:18px; padding:19px 0; border-bottom:1px solid var(--line); break-inside:avoid; }
+    .certificate:last-child { border-bottom:0; }
+    .cert-icon { width:28px; flex-shrink:0; font-size:28px; line-height:1.4; color:var(--accent); }
+    .certificate h3 { font-size:16px; margin-bottom:5px; }
+    .certificate p { color:var(--muted); font-family:var(--mono); font-size:10px; margin:0; line-height:1.6; }
+    .certificate p span[aria-hidden] { margin:0 7px; color:var(--line); }
+    .empty-state { padding:32px; background:var(--surface); margin-left:48px; border:1px dashed var(--line); color:var(--muted); text-align:center; border-radius:8px; }
+    .language-list { list-style:none; padding:0; margin:0 0 0 48px; }
+    .language-list li { display:flex; justify-content:space-between; padding:15px 0; border-bottom:1px solid var(--line); font-family:var(--display); font-size:18px; }
+    .language-list li:last-child { border:0; }
+    .language-list li > span:not([data-i18n]) { color:var(--accent); font-family:var(--mono); font-size:11px; align-self:center; }
+    .hobby-tags { margin-left:48px; display:flex; flex-wrap:wrap; gap:10px 22px; list-style:none; padding:0; color:var(--muted); font-size:13px; }
+    .hobby-tags li { padding-left:13px; position:relative; }
+    .hobby-tags li::before { content:''; width:4px; height:4px; background:var(--accent); position:absolute; left:0; top:9px; }
+    .footer { padding:36px 0 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px; font-size:11px; color:var(--muted); }
+    .footer p { margin:0; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:24px; }
+    .footer a:hover { color:var(--accent); }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    @media (min-width:1400px) { .hero { padding-top:88px; } }
+    @media (max-width:1050px) { .wrap { width:calc(100% - 56px); } .nav { gap:16px; } .brand-text { display:none; } .topbar-inner { gap:22px; } .hero-inner { grid-template-columns:minmax(0,1fr) 230px; gap:30px; } .hero-visual { height:286px; } .diagram-label.identity { left:82px; top:10px; } .diagram-label.cloud { left:-6px; bottom:55px; } .diagram-label.data { right:-9px; bottom:55px; } .portrait-frame { width:142px; height:142px; } .orbit { width:190px; height:190px; } .headline { font-size:21px; } }
+    @media (max-width:760px) { .wrap { width:calc(100% - 40px); } .topbar-inner { min-height:105px; gap:12px; flex-wrap:wrap; padding:12px 0 0; } .brand-text { display:block; } .actions { margin-left:auto; } .nav { order:3; width:100%; overflow:auto; margin:0; gap:25px; padding-bottom:10px; } .nav a { font-size:11px; padding:4px 0; } .hero { padding:48px 0 24px; } .hero-inner { display:block; } .hero-visual { display:none; } h1 { font-size:clamp(40px,8.7vw,63px); } .eyebrow { font-size:10px; margin-bottom:24px; } .hero-caption { font-size:14px; } .hero-divider { margin-top:35px; } .section { padding:30px 0 36px; scroll-margin-top:110px; } .section-header { margin-bottom:24px; gap:13px; } .section-header::after { width:24px; } .objective { padding:23px 24px; } .objective p { font-size:18px; } .job { padding:18px; margin-bottom:20px; } .job-header { display:block; } .dates { margin-top:12px; white-space:normal; } h3 { font-size:20px; } .timeline { margin-left:10px; padding-left:19px; } .job::before { left:-26px; top:26px; } .responsibilities ul { font-size:13px; padding-left:16px; } .responsibilities li { padding-left:1px; } .company { font-size:13px; } .current-label { margin-left:5px; } .experience-toolbar,.education-list,.skills-intro,.skill-tags,.technology-line,.credential-controls,.search-status,.certificate-list,.empty-state,.language-list,.hobby-tags { margin-left:0; } .education-item h3 { font-size:17px; } .education-item { gap:16px; } .skill-tags { gap:8px; } .skill-tags li { padding:8px 12px; font-size:12px; } .filter { padding:9px 12px; } .credential-controls { gap:10px; } .search-wrap { min-width:100%; } .section-note { font-size:9px; } .certificate { gap:12px; } .certificate h3 { font-size:15px; } .certificate p { font-size:10px; } .language-list li { font-size:16px; } .footer { padding:26px 0; } }
+    @media (max-width:400px) { .print-button { padding:8px 10px; } .print-button span { display:none; } .brand-text { font-size:12px; } .brand-text small { font-size:9px; } h1 { font-size:42px; } .headline { font-size:20px; } .objective p { font-size:17px; } .section-header::after { display:none; } .current-label { display:inline-block; margin-left:5px; } }
+    .section { scroll-margin-top:0; }
+    @media (min-width:1051px) { .topbar-inner { gap:20px; } .nav { gap:15px; } .brand-text { font-size:12px; } }
+    @media (min-width:761px) and (max-width:900px) {
+      html { scroll-padding-top:145px; }
+      .topbar-inner { flex-wrap:wrap; min-height:0; gap:12px; padding-top:12px; }
+      .brand-text { display:block; }
+      .actions { margin-left:auto; }
+      .nav { order:3; width:100%; overflow:auto; margin:0; padding-bottom:10px; gap:25px; }
+    }
+    @media (max-width:760px) {
+      html { scroll-padding-top:185px; }
+      .topbar-inner { min-height:0; gap:10px; }
+      .actions { width:100%; margin-left:0; }
+      .language-switch { margin-right:auto; }
+      .hero { padding-top:28px; }
+      .hero-inner { display:flex; flex-direction:column; }
+      .hero-inner>div:first-child { order:2; width:100%; }
+      .hero-visual { display:grid; order:1; width:170px; height:170px; margin-bottom:24px; }
+      .hero-visual .network,.hero-visual .orbit,.hero-visual .diagram-label,.hero-visual .diagram-caption { display:none; }
+      .portrait-frame { width:148px; height:148px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }
+    @page { size:A4; margin:13mm 14mm; }
+    @media print {
+      * { -webkit-print-color-adjust:exact; print-color-adjust:exact; animation:none!important; transition:none!important; }
+      :root,html[data-theme] { --bg:#fff; --surface:#f2f7f8; --surface-soft:#f2f7f8; --ink:#102b35; --muted:#435a64; --accent:#006b73; --accent-ink:#fff; --line:#c4d6dc; --shadow:none; color-scheme:light; }
+      html { scroll-padding:0; }
+      body { font-size:9.3pt; line-height:1.45; background:#fff; color:var(--ink); }
+      .wrap { width:100%; max-width:none; }
+      .topbar,.skip-link,.hero-divider,.hero-visual,.experience-toolbar,.credential-controls,.search-status,.empty-state,.footer-links,summary { display:none!important; }
+      .hero { padding:0 0 14px; border-bottom:2px solid var(--accent); overflow:visible; }
+      .hero::before { display:none; }
+      .hero-inner { display:block; }
+      .hero-visual { display:grid!important; width:72px; height:72px; position:absolute; right:0; top:0; }
+      .hero-visual .network,.hero-visual .orbit,.hero-visual .diagram-label,.hero-visual .diagram-caption { display:none!important; }
+      .hero-visual .portrait-frame { width:72px; height:72px; padding:3px; }
+      .hero h1 { max-width:calc(100% - 88px); font-size:27pt; }
+      .eyebrow { margin-bottom:10px; font-size:8pt; }
+      h1 { font-size:30pt; margin-bottom:10px; line-height:1.1; }
+      h1 span { display:inline; }
+      h1 .surname::before { content:' '; }
+      .headline { font-size:13pt; margin-bottom:7px; }
+      .hero-caption { display:none; }
+      .focus-tags { margin-bottom:10px; gap:6px; }
+      .focus-tags li { font-size:7pt; padding:2px 6px; }
+      .contact { font-size:8pt; gap:8px 18px; }
+      .contact .icon { width:11px; height:11px; }
+      main { padding:0; }
+      .section { padding:16px 0; border-color:var(--line); }
+      .section-header { break-after:avoid; page-break-after:avoid; margin-bottom:12px; gap:10px; }
+      .section-number { width:23px; height:23px; font-size:7pt; }
+      h2 { font-size:8pt; letter-spacing:.14em; }
+      .section-note { font-size:7pt; }
+      .objective { padding:12px 16px; border-radius:0; box-shadow:none; break-inside:avoid; }
+      .objective p { font-family:var(--body); font-size:10pt; line-height:1.5; }
+      .timeline { border:0; padding:0; margin:0; }
+      .job { padding:0; margin:0 0 16px; border:0; border-radius:0; background:transparent; box-shadow:none; break-inside:auto; }
+      .job::before { display:none; }
+      .job-header { display:flex; gap:14px; margin-bottom:3px; break-inside:avoid; break-after:avoid; }
+      .company { font-size:9pt; margin-bottom:2px; }
+      h3 { font-size:11pt; margin-bottom:2px; }
+      .current-label { font-size:6pt; padding:1px 4px; }
+      .dates { margin-top:1px; font-size:7pt; white-space:nowrap; }
+      .assignment { font-size:8pt; margin-top:3px; }
+      details.responsibilities { display:block; margin-top:5px; }
+      details.responsibilities>ul { display:block!important; }
+      .responsibilities ul { font-size:9.2pt; line-height:1.45; margin:4px 0 0; padding-left:15px; }
+      .responsibilities li { margin:3px 0; padding-left:2px; break-inside:avoid; orphans:2; widows:2; }
+      .education-list,.skills-intro,.skill-tags,.technology-line,.certificate-list,.language-list,.hobby-tags { margin-left:0; }
+      .education-item { padding:9px 0; break-inside:avoid; gap:20px; }
+      .education-item h3 { font-size:10pt; }
+      .education-item p { font-size:8.5pt; margin-top:2px; }
+      .year { font-size:8pt; }
+      .skills-intro { font-size:9pt; margin-bottom:10px; }
+      .skill-tags { gap:5px; margin-bottom:12px; }
+      .skill-tags li { font-size:8pt; padding:4px 8px; break-inside:avoid; }
+      .technology-line { font-size:8pt; padding-top:10px; }
+      .technology-line strong { font-size:7pt; }
+      .certificate-list .certificate[hidden] { display:flex!important; }
+      .certificate { gap:10px; padding:8px 0; }
+      .cert-icon { font-size:16px; width:20px; }
+      .certificate h3 { font-size:9.5pt; }
+      .certificate p { font-size:7.5pt; }
+      .language-list li { font-size:10pt; padding:7px 0; }
+      .language-list li > span:not([data-i18n]) { font-size:8pt; }
+      .hobby-tags { gap:5px 20px; font-size:8.5pt; }
+      .hobby-tags li::before { top:6px; }
+      .footer { padding:12px 0 0; font-size:7pt; }
+      a { text-decoration:none; }
+      .section:last-child { border-bottom:0; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to resume content</a>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#top" class="brand" aria-label="Ewerton Lucena, back to top"><span class="monogram" aria-hidden="true">EL</span><span class="brand-text">Ewerton Lucena<small>CYBERSECURITY / CV 2026</small></span></a>
+      <nav class="nav" aria-label="Resume sections">
+        <a href="#objective">Profile</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Expertise</a><a href="#credentials">Credentials</a>
+      </nav>
+      <div class="actions">
+        <div class="language-switch" role="group" aria-label="Resume language">
+          <button type="button" class="language-button" data-lang="pt-BR" lang="pt-BR" aria-pressed="false" aria-label="Português do Brasil (PT-BR)"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#009b3a"/><path d="M14 2 26 10 14 18 2 10Z" fill="#ffdf00"/><circle cx="14" cy="10" r="5" fill="#002776"/><path d="M9.5 8.5c3.1-.6 6.5.2 9 2" fill="none" stroke="#fff" stroke-width="1"/><g fill="#fff"><circle cx="12" cy="11" r=".4"/><circle cx="15" cy="13" r=".4"/><circle cx="16" cy="9" r=".4"/></g></svg><span>PT-BR</span></button>
+          <button type="button" class="language-button" data-lang="en-US" lang="en-US" aria-pressed="true" aria-label="English, United States (EN-US)"><svg class="flag" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#fff"/><path d="M0 .77h28M0 3.85h28M0 6.92h28M0 10h28M0 13.08h28M0 16.15h28M0 19.23h28" stroke="#b22234" stroke-width="1.54"/><rect width="12" height="10.77" fill="#3c3b6e"/><g fill="#fff"><circle cx="2" cy="2" r=".5"/><circle cx="5" cy="2" r=".5"/><circle cx="8" cy="2" r=".5"/><circle cx="10" cy="2" r=".5"/><circle cx="3" cy="4" r=".5"/><circle cx="6" cy="4" r=".5"/><circle cx="9" cy="4" r=".5"/><circle cx="2" cy="6" r=".5"/><circle cx="5" cy="6" r=".5"/><circle cx="8" cy="6" r=".5"/><circle cx="10" cy="6" r=".5"/><circle cx="3" cy="8" r=".5"/><circle cx="6" cy="8" r=".5"/><circle cx="9" cy="8" r=".5"/></g></svg><span>EN-US</span></button>
+        </div>
+        <button type="button" class="icon-button" id="theme-toggle" aria-label="Switch to light theme" title="Switch to light theme"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+        <button type="button" class="print-button" id="print-resume" title="Print or save the full resume as PDF"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 16H4V9h16v7h-3M7 13h10v8H7zM17 10h.1"/></svg><span>Print / PDF</span><span class="sr-only">Print or save resume as PDF</span></button>
+      </div>
+    </div>
+    <div class="reading-progress" aria-hidden="true"></div>
+  </div>
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Cloud. Identity. Data.</p>
+          <h1><span>Ewerton</span><span class="surname">Gomes de Lucena</span></h1>
+          <p class="headline">Cybersecurity Consultant <span aria-hidden="true">/</span> Microsoft Security</p>
+          <p class="hero-caption">Specialist in cyber defense technologies, with a focus on cloud security architecture, identity, and data protection.</p>
+          <ul class="focus-tags" aria-label="Areas of focus"><li>MICROSOFT SECURITY</li><li>ZERO TRUST</li><li>DATA & AI PROTECTION</li></ul>
+          <div class="contact" aria-label="Contact details">
+            <a href="mailto:ewerton.lucena@hotmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>ewerton.lucena@hotmail.com</a>
+            <a href="tel:+5521997541185"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 3 5-2 2c1.5 3 3 4.5 6 6l2-2 5 3c-1 7-8 4-13-1S0 4 7 3Z"/></svg>+55 21 99754-1185</a>
+            <a href="https://www.linkedin.com/in/ewertonlucena/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7m0-10h.01M11 17v-7m0 3c0-4 6-4 6 0v4"/></svg>LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <svg class="network" viewBox="0 0 300 326" aria-hidden="true"><path d="M150 36 45 224h210L150 36M45 224l-25-70 68-41M255 224l25-70-68-41M45 224l25 59h160l25-59M150 36V9M20 154H0m280 0h20"/><polygon points="150,45 244,100 244,210 150,265 56,210 56,100" class="hex-bright"/><polygon points="150,65 227,110 227,200 150,245 73,200 73,110"/><polygon points="20,123 46,138 46,168 20,183 -6,168 -6,138"/><polygon points="280,123 306,138 306,168 280,183 254,168 254,138"/><polygon points="150,1 175,16 175,46 150,61 125,46 125,16"/><circle class="node" cx="45" cy="224" r="4"/><circle class="node" cx="255" cy="224" r="4"/><circle class="node" cx="150" cy="36" r="4"/><circle class="node" cx="20" cy="154" r="3"/><circle class="node" cx="280" cy="154" r="3"/></svg>
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="portrait-frame"><img src="@@PHOTO@@" alt="Portrait of Ewerton Gomes de Lucena" width="144" height="144"></div>
+          <span class="diagram-label identity" aria-hidden="true">IDENTITY</span><span class="diagram-label cloud" aria-hidden="true">CLOUD</span><span class="diagram-label data" aria-hidden="true">DATA</span>
+          <span class="diagram-caption" aria-hidden="true">SECURITY BY DESIGN</span>
+        </div>
+      </div>
+      <div class="hero-divider" aria-hidden="true"><span>⬡</span></div>
+    </div>
+  </header>
+  <main class="wrap" id="main-content">
+    <section class="section" id="objective" aria-labelledby="objective-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">01</span><h2 id="objective-heading">Career Objective</h2></div>
+      <div class="objective"><p>Cybersecurity consultant focused on <strong>cloud security, identity, and data protection</strong> in the Microsoft ecosystem. My objective is to help organizations translate business and regulatory requirements into scalable security architectures, strengthen Zero Trust adoption, and protect sensitive data and AI workloads.</p></div>
+    </section>
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">02</span><h2 id="experience-heading">Work Experience</h2><span class="section-note">2014 — PRESENT</span></div>
+      <div class="experience-toolbar"><p class="small-note">From IT infrastructure to cloud and data security.</p><button type="button" class="text-button" id="toggle-details" aria-expanded="true" aria-controls="career-timeline">Collapse responsibilities</button></div>
+      <div class="timeline" id="career-timeline">@@JOBS@@</div>
+    </section>
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">03</span><h2 id="education-heading">Education</h2></div>
+      <div class="education-list">@@EDUCATION@@</div>
+    </section>
+    <section class="section" id="skills" aria-labelledby="skills-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">04</span><h2 id="skills-heading">Skills & Expertise</h2></div>
+      <p class="skills-intro">Security architecture, technical delivery, and advisory across cloud, identity, and data.</p>
+      <ul class="skill-tags">@@SKILLS@@</ul>
+      <p class="technology-line"><strong>Technology focus</strong>Microsoft Entra · Microsoft Purview · Azure · Microsoft 365 · Sentinel · Netskope · AWS · Ansible · Terraform</p>
+    </section>
+    <section class="section" id="credentials" aria-labelledby="credentials-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">05</span><h2 id="credentials-heading">Certificates & Training</h2><span class="section-note">2021 — 2026</span></div>
+      <div class="credential-controls">
+        <div class="search-wrap"><label class="sr-only" for="credential-search">Search certificates by title, provider, or date</label><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" id="credential-search" placeholder="Search title, provider, or date…" autocomplete="off"></div>
+        <div class="filter-group" role="group" aria-label="Filter certificates by provider"><button type="button" class="filter" data-filter="all" aria-pressed="true">All</button><button type="button" class="filter" data-filter="microsoft" aria-pressed="false">Microsoft</button><button type="button" class="filter" data-filter="other" aria-pressed="false">Other providers</button></div>
+      </div>
+      <p class="search-status" id="search-status" role="status" aria-live="polite" aria-atomic="true">22 of 22 certificates and training entries</p>
+      <ul class="certificate-list" id="certificate-list">@@CERTIFICATES@@</ul>
+      <div class="empty-state" id="empty-state" hidden><p>No certificates match your search.</p><button type="button" class="text-button" id="reset-search">Clear search and filters</button></div>
+    </section>
+    <section class="section" id="languages" aria-labelledby="languages-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">06</span><h2 id="languages-heading">Languages</h2></div>
+      <ul class="language-list"><li>English <span>Advanced</span></li><li>Spanish <span>Intermediate</span></li><li>Portuguese (Brazil) <span>Native</span></li></ul>
+    </section>
+    <section class="section" id="interests" aria-labelledby="interests-heading">
+      <div class="section-header"><span class="section-number" aria-hidden="true">07</span><h2 id="interests-heading">Beyond Work</h2></div>
+      <ul class="hobby-tags"><li>Gym & weight training</li><li>Forró dancing</li><li>Science fiction books</li><li>TV series</li><li>Video games & online cooperative games</li><li>Cult, horror, crime & sci-fi films</li><li>Crime, horror & science fiction books</li></ul>
+    </section>
+  </main>
+  <footer class="wrap footer"><p>Ewerton Gomes de Lucena <span aria-hidden="true">/</span> English CV · 2026</p><div class="footer-links"><a href="#top">Back to top ↑</a></div></footer>
+  <p class="sr-only" id="locale-status" role="status" aria-live="polite"></p>
+  <script type="application/json" id="resume-translations">@@TRANSLATIONS@@</script>
+  <script>
+    (() => {
+      'use strict';
+      const root=document.documentElement;
+      const messages=JSON.parse(document.getElementById('resume-translations').textContent);
+      let locale=root.lang==='pt-BR'?'pt-BR':'en-US';
+      const t=message=>locale==='pt-BR'?(messages[message]||message):message;
+      const themeButton=document.getElementById('theme-toggle');
+      function setTheme(theme) {
+        root.dataset.theme=theme;
+        const next=theme==='dark'?'light':'dark';
+        themeButton.setAttribute('aria-label',t(`Switch to ${next} theme`));
+        themeButton.title=t(`Switch to ${next} theme`);
+        try { localStorage.setItem('ewerton-resume-theme',theme); } catch (_) {}
+      }
+      try { const saved=localStorage.getItem('ewerton-resume-theme'); if(saved==='light'||saved==='dark')setTheme(saved); } catch (_) {}
+      themeButton.addEventListener('click',()=>setTheme(root.dataset.theme==='dark'?'light':'dark'));
+      const details=[...document.querySelectorAll('.responsibilities')];
+      const detailToggle=document.getElementById('toggle-details');
+      function updateDetailsButton() {
+        const expanded=details.some(item=>item.open);
+        detailToggle.textContent=t(expanded?'Collapse responsibilities':'Expand responsibilities');
+        detailToggle.setAttribute('aria-expanded',String(expanded));
+        details.forEach(item=>{item.querySelector('.disclosure-icon').textContent=item.open?'−':'+';});
+      }
+      detailToggle.addEventListener('click',()=>{
+        const collapse=details.some(item=>item.open);
+        details.forEach(item=>item.open=!collapse);
+        updateDetailsButton();
+      });
+      details.forEach(item=>item.addEventListener('toggle',updateDetailsButton));
+      const search=document.getElementById('credential-search');
+      const filters=[...document.querySelectorAll('.filter')];
+      const certificates=[...document.querySelectorAll('.certificate')];
+      let activeFilter='all';
+      const normalize=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+      function filterCertificates() {
+        const query=normalize(search.value.trim());
+        let count=0;
+        certificates.forEach(item=>{
+          const provider=item.dataset.provider.toLowerCase();
+          const matchProvider=activeFilter==='all'||(activeFilter==='microsoft'?provider==='microsoft':provider!=='microsoft');
+          const visible=matchProvider&&normalize(item.textContent).includes(query);
+          item.hidden=!visible;
+          if(visible)count++;
+        });
+        document.getElementById('search-status').textContent=locale==='pt-BR'?`${count} de ${certificates.length} certificados e cursos`:`${count} of ${certificates.length} certificates and training entries`;
+        document.getElementById('empty-state').hidden=count!==0;
+        filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===activeFilter)));
+      }
+      search.addEventListener('input',filterCertificates);
+      filters.forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.filter;filterCertificates();}));
+      document.getElementById('reset-search').addEventListener('click',()=>{search.value='';activeFilter='all';filterCertificates();search.focus();});
+      function setLanguage(next,announce=false){
+        locale=next==='pt-BR'?'pt-BR':'en-US';
+        root.lang=locale;
+        document.querySelectorAll('[data-i18n]').forEach(element=>element.textContent=t(element.dataset.i18n));
+        ['aria-label','title','placeholder','alt','content'].forEach(attribute=>{
+          document.querySelectorAll(`[data-i18n-${attribute}]`).forEach(element=>element.setAttribute(attribute,t(element.getAttribute(`data-i18n-${attribute}`))));
+        });
+        document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===locale)));
+        document.title=t('Ewerton Gomes de Lucena | Cybersecurity & Microsoft Security');
+        updateDetailsButton();
+        filterCertificates();
+        setTheme(root.dataset.theme);
+        if(announce)document.getElementById('locale-status').textContent=locale==='pt-BR'?'Idioma alterado para português do Brasil.':'Language switched to English (United States).';
+      }
+      function detectBrowserLanguage(){
+        const preferredLanguages=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
+        for(const language of preferredLanguages){
+          if(typeof language!=='string')continue;
+          const primaryLanguage=language.toLowerCase().split(/[-_]/)[0];
+          if(primaryLanguage==='pt')return 'pt-BR';
+          if(primaryLanguage==='en')return 'en-US';
+        }
+        return 'en-US';
+      }
+      const languagePreferenceKey='ewerton-resume-language-override';
+      const isSupportedLanguage=language=>language==='pt-BR'||language==='en-US';
+      let hasManualLanguage=false;
+      let initialLanguage=detectBrowserLanguage();
+      // Remember explicit choices only, so automatic detection stays automatic.
+      // The old key stored both automatic and manual values and is intentionally ignored.
+      try{
+        const saved=localStorage.getItem(languagePreferenceKey);
+        if(isSupportedLanguage(saved)){initialLanguage=saved;hasManualLanguage=true;}
+      }catch(_){}
+      const requestedLanguage=new URLSearchParams(location.search).get('lang');
+      const hasExplicitLanguage=isSupportedLanguage(requestedLanguage);
+      if(hasExplicitLanguage)initialLanguage=requestedLanguage;
+      setLanguage(initialLanguage);
+      document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>{
+        hasManualLanguage=true;
+        setLanguage(button.dataset.lang,true);
+        try{localStorage.setItem(languagePreferenceKey,locale);}catch(_){}
+        // A shared language link must follow a later manual selection on reload.
+        try{
+          const currentURL=new URL(location.href);
+          if(currentURL.searchParams.has('lang')){
+            currentURL.searchParams.set('lang',locale);
+            history.replaceState(null,'',currentURL);
+          }
+        }catch(_){}
+      }));
+      window.addEventListener('languagechange',()=>{
+        if(!hasManualLanguage&&!hasExplicitLanguage)setLanguage(detectBrowserLanguage());
+      });
+      let printDetails=null;
+      function preparePrint(){if(!printDetails)printDetails=details.map(item=>item.open);details.forEach(item=>item.open=true);}
+      function finishPrint(){if(printDetails){details.forEach((item,i)=>item.open=printDetails[i]);printDetails=null;updateDetailsButton();}}
+      window.addEventListener('beforeprint',preparePrint);
+      window.addEventListener('afterprint',finishPrint);
+      document.getElementById('print-resume').addEventListener('click',()=>window.print());
+      const progress=document.querySelector('.reading-progress');
+      const navigationLinks=[...document.querySelectorAll('.nav a')];
+      function updateProgress(){
+        const height=root.scrollHeight-window.innerHeight;
+        progress.style.width=`${height>0?Math.min(100,window.scrollY/height*100):0}%`;
+        if(window.scrollY<100)navigationLinks.forEach((link,index)=>{if(index===0)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});
+      }
+      window.addEventListener('scroll',updateProgress,{passive:true});
+      window.addEventListener('resize',updateProgress);
+      updateProgress();
+      if('IntersectionObserver' in window){
+        const links=[...document.querySelectorAll('.nav a')];
+        const observer=new IntersectionObserver(entries=>{
+          entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(link=>{if(link.hash==='#'+entry.target.id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});}});
+        },{rootMargin:'-115px 0px -55% 0px',threshold:0});
+        links.forEach(link=>{const section=document.querySelector(link.hash);if(section)observer.observe(section);});
+      }
+    })();
+  </script>
+</body>
+</html>

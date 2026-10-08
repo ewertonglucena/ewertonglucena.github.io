@@ -1,0 +1,20 @@
+{
+  "checks": "passed",
+  "photo": "Exact attached PNG embedded in HTML",
+  "languages": [
+    "pt-BR",
+    "en-US"
+  ],
+  "localized": "Headings, roles, duties, education, skills, credentials, dates, hobbies, controls, labels and metadata",
+  "flags": "Inline Brazil and United States SVG",
+  "widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "print": "Both languages, all content despite active filter and collapsed disclosures",
+  "externalRequests": 0,
+  "consoleErrors": 0
+}
