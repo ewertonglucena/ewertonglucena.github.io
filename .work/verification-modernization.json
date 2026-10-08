@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "durationCases": {
+    "overlap": 24,
+    "gaps": 12,
+    "ongoing": 7,
+    "nextMonth": 8,
+    "invalid": 0,
+    "it": 146,
+    "cyber": 52,
+    "identity": 7,
+    "invalidMonth": null
+  },
+  "modeSwitch": "Keyboard, direct URL, stable facts",
+  "credentials": {
+    "entries": 27,
+    "professional": 9,
+    "expiredFortinet": 3,
+    "officialProgramLinks": 4
+  },
+  "projects": 2,
+  "locales": [
+    "pt-BR",
+    "en-US"
+  ],
+  "noJavaScript": "Complete career, skills, projects and credentials",
+  "consoleErrors": 0
+}

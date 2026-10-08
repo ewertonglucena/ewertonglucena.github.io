@@ -1,6 +1,7 @@
 from pathlib import Path
 import html, json, base64
 from localize_resume import localize, TRANSLATIONS
+import modern_data as modern
 
 ROOT = Path(__file__).resolve().parent.parent
 WORK = ROOT / '.work'
@@ -95,24 +96,34 @@ certificates = [
     ('Introduction to LGPD', 'Protegon', 'July 2021')
 ]
 e = html.escape
+jobs = modern.enrich_jobs(jobs)
+certificates = modern.enrich_certificates(certificates)
 
 def job_html(job, i):
     bullets = ''.join(f'<li>{e(b)}</li>' for b in job['bullets'])
     detail = f'<details open class="responsibilities"><summary>Responsibilities <span class="disclosure-icon" aria-hidden="true">−</span></summary><ul>{bullets}</ul></details>' if bullets else ''
     assignment = f'<p class="assignment">{e(job["assignment"])}</p>' if job.get('assignment') else ''
     current = '<span class="current-label">Current role</span>' if job.get('current') else ''
-    return f'''<article class="job {'job-current' if job.get('current') else ''}">
-      <div class="job-header"><div><p class="company">{e(job['company'])} {current}</p><h3>{e(job['title'])}</h3>{assignment}</div><p class="dates">{e(job['dates'])}</p></div>{detail}
+    tags = ''.join(f'<li>{e(tag)}</li>' for tag in job['technologies'])
+    technologies = f'<ul class="job-tags" aria-label="Technology focus">{tags}</ul>' if tags else ''
+    outcome = f'<p class="job-outcome"><strong>Documented outcome</strong> {e(job["outcome"])}</p>' if job.get('outcome') else ''
+    progression = '<p class="progression">Role progression: L1 → L2</p>' if i==2 else ''
+    return f'''<article class="job {'job-current' if job.get('current') else ''}" data-focus="{' '.join(job['focus'])}">
+      <div class="job-header"><div><p class="company">{e(job['company'])} {current}</p><h3>{e(job['title'])}</h3>{assignment}</div><div class="job-period"><p class="dates">{e(job['dates'])}</p><p class="job-duration" data-duration="{i}"></p></div></div><p class="job-summary">{e(job['summary'])}</p>{progression}{technologies}{outcome}{detail}
     </article>'''
 
-education_html = ''.join(f'<article class="education-item"><div><h3>{e(title)}</h3><p>{e(school)}</p></div><span class="year">{year}</span></article>' for title, school, year in education)
+education_html = ''.join(f'<article class="education-item"><div><h3>{e(title)}</h3><p>{e(school)}</p>{"<p>2025 — 2027 · Program period listed on LinkedIn</p>" if school=="FIA Business School" else ""}</div><span class="year">{year}</span></article>' for title, school, year in education)
 skills_html = ''.join(f'<li>{e(s)}</li>' for s in skills)
-certs_html = ''.join(f'<li class="certificate" data-provider="{e(provider)}"><span class="cert-icon" aria-hidden="true">◇</span><div><h3>{e(title)}</h3><p>{e(provider)} <span aria-hidden="true">/</span> <span>{date}</span></p></div></li>' for title, provider, date in certificates)
+certs_html = modern.certificates_html(certificates)
 
 template = (ROOT / '.work' / 'resume-template.html').read_text(encoding='utf-8')
-portrait=Path('C:/Users/ewert/OneDrive/backup/a_clean_cutout_portrait_on_a_transparent_backgroun.png').read_bytes()
+portrait_path=WORK/'portrait.png'
+if not portrait_path.exists():
+    portrait_path.write_bytes(Path('C:/Users/ewert/OneDrive/backup/a_clean_cutout_portrait_on_a_transparent_backgroun.png').read_bytes())
+portrait=portrait_path.read_bytes()
 photo='data:image/png;base64,'+base64.b64encode(portrait).decode('ascii')
-for key, value in {'PHOTO':photo,'TRANSLATIONS':json.dumps(TRANSLATIONS,ensure_ascii=False).replace('</','<\\/'),'JOBS':''.join(job_html(j,i) for i,j in enumerate(jobs)), 'EDUCATION':education_html, 'SKILLS':skills_html, 'CERTIFICATES':certs_html}.items():
+resume_data = {'jobs':jobs, 'education':education, 'skills':skills, 'skill_groups':modern.GROUPS, 'certificates':certificates, 'projects':modern.PROJECTS}
+for key, value in {'PHOTO':photo,'TRANSLATIONS':json.dumps(TRANSLATIONS,ensure_ascii=False).replace('</','<\\/'),'JOBS':''.join(job_html(j,i) for i,j in enumerate(jobs)), 'EDUCATION':education_html, 'SKILLS':skills_html, 'CERTIFICATES':certs_html, 'PROJECTS':modern.projects_html(), 'SKILL_GROUPS':modern.groups_html(), 'RESUME_DATA':json.dumps(resume_data,ensure_ascii=False).replace('</','<\\/'), 'MODERN_SCRIPT':(WORK/'modern-resume.js').read_text(encoding='utf-8'), 'MODERN_STYLE':(WORK/'modern-resume.css').read_text(encoding='utf-8')}.items():
     template = template.replace('@@'+key+'@@', value)
 
 # Fonts remain local platform fonts: no third-party request is needed to open this file.
@@ -121,5 +132,6 @@ destination = ROOT / '[EN] CV - Ewerton Gomes de Lucena 2026 - Interactive.html'
 destination.write_text(localize(template,'en-US'), encoding='utf-8')
 bilingual=ROOT / 'CV - Ewerton Gomes de Lucena 2026 - PT-BR EN-US.html'
 bilingual.write_text(localize(template,'pt-BR'), encoding='utf-8')
-(WORK / 'resume-content.json').write_text(json.dumps({'jobs':jobs, 'education':education, 'skills':skills, 'certificates':certificates}, ensure_ascii=False, indent=2), encoding='utf-8')
+(ROOT / 'index.html').write_text(localize(template,'pt-BR'), encoding='utf-8')
+(WORK / 'resume-content.json').write_text(json.dumps(resume_data, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({'html':str(bilingual),'english_html':str(destination), 'bytes':bilingual.stat().st_size, 'jobs':len(jobs),'education':len(education),'skills':len(skills),'certificates':len(certificates)}))

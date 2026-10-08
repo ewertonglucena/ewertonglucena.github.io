@@ -16,7 +16,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     await page.goto(pathToFileURL(file).href);
     assert.equal(await page.locator('html').getAttribute('lang'),'pt-BR');
     assert.equal(await page.locator('#objective-heading').textContent(),'Objetivo Profissional');
-    assert.equal(await page.locator('.headline').textContent(),'Consultor de Cibersegurança / Microsoft Security');
+    assert.equal(await page.locator('.headline').textContent(),'Consultor Sênior de Cibersegurança | Identity & Access Security | Microsoft Security');
     assert.equal(await page.locator('.diagram-caption').textContent(),'SECURITY BY DESIGN');
     assert.equal(await page.locator('[data-lang="pt-BR"]').getAttribute('aria-pressed'),'true');
     assert.equal(await page.locator('.flag').count(),2);
@@ -26,7 +26,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     assert.equal(image.src,'data:image/png;base64,'+fs.readFileSync('C:/Users/ewert/OneDrive/backup/a_clean_cutout_portrait_on_a_transparent_backgroun.png').toString('base64'));
     assert(await page.locator('.portrait-frame img').isVisible());
     assert.equal(await page.locator('.job').count(),8);
-    assert.equal(await page.locator('.certificate').count(),22);
+    assert.equal(await page.locator('.certificate').count(),27);
     assert.equal(await page.locator('.education-item').count(),5);
     await page.screenshot({path:path.join(__dirname,'preview-bilingual-pt.png')});
     await page.locator('#credential-search').fill('forense');
@@ -47,7 +47,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     assert.equal(await page.locator('#toggle-details').textContent(),'Expand responsibilities');
     assert.equal(await page.locator('.responsibilities[open]').count(),0,'Switching language must preserve disclosures');
     assert.equal(await page.locator('.certificate:visible').count(),7,'Switching language must preserve provider filter');
-    assert((await page.locator('#search-status').textContent()).startsWith('7 of 22'));
+    assert((await page.locator('#search-status').textContent()).startsWith('7 of 27'));
     assert.equal(await page.locator('#credential-search').getAttribute('placeholder'),'Search title, provider, or date…');
     assert.equal(await page.locator('#theme-toggle').getAttribute('aria-label'),'Switch to light theme');
     await page.locator('[data-filter="all"]').click();
@@ -60,7 +60,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     await page.locator('[data-lang="pt-BR"]').click();
     assert.equal(await page.locator('html').getAttribute('data-theme'),'light','Language must not reset theme');
     assert.equal(await page.locator('#theme-toggle').getAttribute('aria-label'),'Ativar tema escuro');
-    assert((await page.title()).includes('Cibersegurança'));
+    assert((await page.title()).includes('Segurança de Identidades'));
     await page.locator('#theme-toggle').click();
     for(const locale of ['pt-BR','en-US']){
       await page.locator(`[data-lang="${locale}"]`).click();
@@ -88,7 +88,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     const staticPage=await browser.newPage({javaScriptEnabled:false});
     await staticPage.goto(pathToFileURL(file).href);
     assert.equal(await staticPage.locator('#objective-heading').textContent(),'Objetivo Profissional');
-    assert.equal(await staticPage.locator('.certificate:visible').count(),22);
+    assert.equal(await staticPage.locator('.certificate:visible').count(),27);
     await staticPage.close();
     assert.deepEqual(errors,[]);
     assert.deepEqual(requests,[]);

@@ -1,6 +1,7 @@
 from pathlib import Path
 from pypdf import PdfReader
 from localize_resume import TRANSLATIONS
+import modern_data
 import json, re, unicodedata, urllib.request
 
 data = json.loads(Path('.work/resume-content.json').read_text(encoding='utf-8'))
@@ -8,9 +9,11 @@ def normalize(text):
     return re.sub(r'[^a-z0-9]', '', unicodedata.normalize('NFKD', text).lower())
 
 texts = [text for job in data['jobs'] for text in [job['title'], job['company'], job['dates']] + job['bullets']]
-texts += [certificate[0] for certificate in data['certificates']]
+texts += [certificate['title'] for certificate in data['certificates']]
 texts += [education[0] for education in data['education']]
 texts += data['skills']
+texts += [text for project in data['projects'] for text in [project['title']] + [field[1] for field in project['fields']]]
+texts += [text for group in data['skill_groups'] for text in group[2]]
 report = {}
 for locale in ['pt-BR', 'en-US']:
     reader = PdfReader(f'.work/print-bilingual-{locale}.pdf')

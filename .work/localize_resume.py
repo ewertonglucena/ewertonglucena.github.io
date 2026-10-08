@@ -6,7 +6,6 @@ TRANSLATIONS = {
     'Ewerton Gomes de Lucena — Cybersecurity Consultant, Microsoft Security. Cloud security architecture, identity, data protection, and AI security.': 'Ewerton Gomes de Lucena — Consultor de Cibersegurança, Microsoft Security. Arquitetura de segurança em nuvem, identidade, proteção de dados e segurança de IA.',
     'Skip to resume content': 'Ir para o conteúdo do currículo',
     'Ewerton Lucena, back to top': 'Ewerton Lucena, voltar ao início',
-    'CYBERSECURITY / CV 2026': 'CIBERSEGURANÇA / CV 2026',
     'Resume sections': 'Seções do currículo',
     'Resume language': 'Idioma do currículo',
     'Profile': 'Perfil', 'Experience': 'Experiência', 'Education': 'Formação',
@@ -138,7 +137,6 @@ TRANSLATIONS = {
     'Video games & online cooperative games': 'Videogames e jogos cooperativos online',
     'Cult, horror, crime & sci-fi films': 'Filmes cult, de terror, policiais e de ficção científica',
     'Crime, horror & science fiction books': 'Livros policiais, de terror e de ficção científica',
-    'English CV · 2026': 'Currículo em português · 2026',
     'Back to top ↑': 'Voltar ao início ↑',
 }
 
@@ -147,7 +145,7 @@ for en, pt in {
     'June': 'Junho', 'January': 'Janeiro', 'February': 'Fevereiro', 'November': 'Novembro',
     'December': 'Dezembro', 'July': 'Julho'
 }.items():
-    for year in range(2021, 2027):
+    for year in range(2020, 2028):
         TRANSLATIONS[f'{en} {year}'] = f'{pt} de {year}'
 
 
@@ -159,6 +157,7 @@ class Localizer(HTMLParser):
         self.parts = []
         self.raw_tag = None
         self.in_title = False
+        self.in_option = False
 
     def translated(self, value):
         return TRANSLATIONS.get(value, value) if self.locale == 'pt-BR' else value
@@ -183,6 +182,8 @@ class Localizer(HTMLParser):
             self.raw_tag = tag
         if tag == 'title':
             self.in_title = True
+        if tag == 'option':
+            self.in_option = True
 
     def handle_startendtag(self, tag, attrs):
         self.start(tag, attrs, '/>')
@@ -193,13 +194,15 @@ class Localizer(HTMLParser):
             self.raw_tag = None
         if tag == 'title':
             self.in_title = False
+        if tag == 'option':
+            self.in_option = False
 
     def handle_data(self, data):
         if self.raw_tag:
             self.parts.append(data)
             return
         key = data.strip()
-        if self.in_title:
+        if self.in_title or self.in_option:
             self.parts.append(html.escape(self.translated(data)))
         elif key in TRANSLATIONS:
             prefix = data[:len(data)-len(data.lstrip())]
