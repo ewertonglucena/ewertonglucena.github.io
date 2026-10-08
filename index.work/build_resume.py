@@ -110,7 +110,7 @@ skills_html = ''.join(f'<li>{e(s)}</li>' for s in skills)
 certs_html = ''.join(f'<li class="certificate" data-provider="{e(provider)}"><span class="cert-icon" aria-hidden="true">◇</span><div><h3>{e(title)}</h3><p>{e(provider)} <span aria-hidden="true">/</span> <span>{date}</span></p></div></li>' for title, provider, date in certificates)
 
 template = (ROOT / '.work' / 'resume-template.html').read_text(encoding='utf-8')
-portrait=Path('C:/Users/ewert/OneDrive/backup/Ewerton Lucena-Foto profissional avatar.png').read_bytes()
+portrait=Path('C:/Users/ewert/OneDrive/backup/a_clean_cutout_portrait_on_a_transparent_backgroun.png').read_bytes()
 photo='data:image/png;base64,'+base64.b64encode(portrait).decode('ascii')
 for key, value in {'PHOTO':photo,'TRANSLATIONS':json.dumps(TRANSLATIONS,ensure_ascii=False).replace('</','<\\/'),'JOBS':''.join(job_html(j,i) for i,j in enumerate(jobs)), 'EDUCATION':education_html, 'SKILLS':skills_html, 'CERTIFICATES':certs_html}.items():
     template = template.replace('@@'+key+'@@', value)

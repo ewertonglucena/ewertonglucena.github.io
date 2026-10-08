@@ -17,12 +17,13 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     assert.equal(await page.locator('html').getAttribute('lang'),'pt-BR');
     assert.equal(await page.locator('#objective-heading').textContent(),'Objetivo Profissional');
     assert.equal(await page.locator('.headline').textContent(),'Consultor de Cibersegurança / Microsoft Security');
+    assert.equal(await page.locator('.diagram-caption').textContent(),'SECURITY BY DESIGN');
     assert.equal(await page.locator('[data-lang="pt-BR"]').getAttribute('aria-pressed'),'true');
     assert.equal(await page.locator('.flag').count(),2);
     assert.equal(await page.locator('.portrait-frame .initials').count(),0);
     const image=await page.locator('.portrait-frame img').evaluate(element=>({loaded:element.complete&&element.naturalWidth>0,src:element.src}));
     assert(image.loaded);
-    assert.equal(image.src,'data:image/png;base64,'+fs.readFileSync('C:/Users/ewert/OneDrive/backup/Ewerton Lucena-Foto profissional avatar.png').toString('base64'));
+    assert.equal(image.src,'data:image/png;base64,'+fs.readFileSync('C:/Users/ewert/OneDrive/backup/a_clean_cutout_portrait_on_a_transparent_backgroun.png').toString('base64'));
     assert(await page.locator('.portrait-frame img').isVisible());
     assert.equal(await page.locator('.job').count(),8);
     assert.equal(await page.locator('.certificate').count(),22);
@@ -41,6 +42,7 @@ const {chromium}=require('C:/Users/ewert/.cache/codex-runtimes/codex-primary-run
     await page.locator('[data-lang="en-US"]').click();
     assert.equal(await page.locator('html').getAttribute('lang'),'en-US');
     assert.equal(await page.locator('#objective-heading').textContent(),'Career Objective');
+    assert.equal(await page.locator('.diagram-caption').textContent(),'SECURITY BY DESIGN');
     assert.equal(await page.locator('.job h3').first().textContent(),'Senior Security Consultant');
     assert.equal(await page.locator('#toggle-details').textContent(),'Expand responsibilities');
     assert.equal(await page.locator('.responsibilities[open]').count(),0,'Switching language must preserve disclosures');

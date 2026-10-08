@@ -22,7 +22,7 @@ TRANSLATIONS = {
     'Contact details': 'Informações de contato',
     'Portrait of Ewerton Gomes de Lucena': 'Foto de Ewerton Gomes de Lucena',
     'IDENTITY': 'IDENTIDADE', 'CLOUD': 'NUVEM', 'DATA': 'DADOS',
-    'SECURITY BY DESIGN': 'SEGURANÇA DESDE A CONCEPÇÃO',
+    'SECURITY BY DESIGN': 'SECURITY BY DESIGN',
     'Career Objective': 'Objetivo Profissional',
     'Cybersecurity consultant focused on': 'Consultor de cibersegurança com foco em',
     'cloud security, identity, and data protection': 'segurança em nuvem, identidade e proteção de dados',
